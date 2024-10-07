@@ -112,6 +112,9 @@ enum rid
   RID_BUILTIN_HAS_ATTRIBUTE,   RID_BUILTIN_ASSOC_BARRIER,  RID_BUILTIN_STDC,
   RID_DFLOAT32, RID_DFLOAT64, RID_DFLOAT128,
 
+  /* SW */
+  RID_ELIF, RID_NAMEOF,
+  
   /* TS 18661-3 keywords, in the same sequence as the TI_* values.  */
   RID_FLOAT16,
   RID_FLOATN_NX_FIRST = RID_FLOAT16,
@@ -445,6 +448,7 @@ extern machine_mode c_default_pointer_mode;
 #define D_CXX20		0x8000  /* In C++, C++20 only.  */
 #define D_CXX_COROUTINES 0x10000  /* In C++, only with coroutines.  */
 #define D_CXX_MODULES	0x20000  /* In C++, only with modules.  */
+#define D_SGWONLY	0x0x40000  /* In SGW */
 
 #define D_CXX_CONCEPTS_FLAGS D_CXXONLY | D_CXX_CONCEPTS
 #define D_CXX_CHAR8_T_FLAGS D_CXXONLY | D_CXX_CHAR8_T

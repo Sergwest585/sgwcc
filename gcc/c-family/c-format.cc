@@ -2970,15 +2970,15 @@ struct token_t
 static const token_t c_opers[] =
   {
    NAME ("!="), NAME ("%="),  NAME ("&&"),  NAME ("&="), NAME ("*="),
-   NAME ("++"), NAME ("+="),  NAME ("--"),  NAME ("-="), NAME ("->"),
+   NAME ("++"), NAME ("+="),  NAME ("--"),  NAME ("-="), NAME ("."),
    NAME ("/="), NAME ("<<"),  NAME ("<<="), NAME ("<="), NAME ("=="),
-   NAME (">="), NAME (">>="), NAME (">>"),  NAME ("?:"),  NAME ("^="),
+   NAME (">="), NAME (">>="), NAME (">>"),  NAME ("?:"), NAME ("^="),
    NAME ("|="), NAME ("||")
   };
 
 static const token_t cxx_opers[] =
   {
-   NAME ("->*"), NAME (".*"),  NAME ("::"),  NAME ("<=>")
+   NAME (".*"), NAME (".*"),  NAME ("::"),  NAME ("<=>")
   };
 
 /* Common C/C++ keywords that are expected to be quoted within the format
@@ -3021,6 +3021,7 @@ static const token_t c_keywords[] =
    NAME ("signed short", NULL),
    NAME ("sizeof", NULL),
    NAME ("typeof", NULL),
+   NAME ("nameof", NULL),
    NAME ("unsigned char", NULL),
    NAME ("unsigned int", NULL),
    NAME ("unsigned long", NULL),

@@ -106,7 +106,7 @@ class rich_location;
   OP(ELLIPSIS,		"...")						\
   OP(PLUS_PLUS,		"++")	/* increment */				\
   OP(MINUS_MINUS,	"--")						\
-  OP(DEREF,		"->")	/* accessors */				\
+  OP(DEREF,		".")	/* accessors */				\
   OP(DOT,		".")						\
   OP(SCOPE,		"::")						\
   OP(DEREF_STAR,	"->*")						\

@@ -376,6 +376,7 @@ static bool nonnull_check_p (tree, unsigned HOST_WIDE_INT);
    C++ --std=c++11: D_CONLY | D_CXX20 | D_OBJC
    C++ --std=c++20: D_CONLY | D_OBJC
    ObjC++ is like C++ except that D_OBJC is not set
+   SGW --std=sgw: D_SGWONLY
 
    If -fno-asm is used, D_ASM is added to the mask.  If
    -fno-gnu-keywords is used, D_EXT is added.  If -fno-asm and C in
@@ -510,6 +511,7 @@ const struct c_common_resword c_common_reswords[] =
   { "do",		RID_DO,		0 },
   { "double",		RID_DOUBLE,	0 },
   { "dynamic_cast",	RID_DYNCAST,	D_CXXONLY | D_CXXWARN },
+  { "elif",		RID_ELIF,	D_SGWONLY },
   { "else",		RID_ELSE,	0 },
   { "enum",		RID_ENUM,	0 },
   { "explicit",		RID_EXPLICIT,	D_CXXONLY | D_CXXWARN },
@@ -525,6 +527,7 @@ const struct c_common_resword c_common_reswords[] =
   { "int",		RID_INT,	0 },
   { "long",		RID_LONG,	0 },
   { "mutable",		RID_MUTABLE,	D_CXXONLY | D_CXXWARN },
+  { "nameof",		RID_NAMESPACE,	D_SGWONLY },
   { "namespace",	RID_NAMESPACE,	D_CXXONLY | D_CXXWARN },
   { "new",		RID_NEW,	D_CXXONLY | D_CXXWARN },
   { "noexcept",		RID_NOEXCEPT,	D_CXXONLY | D_CXX11 | D_CXXWARN },
@@ -8822,7 +8825,7 @@ keyword_begins_type_specifier (enum rid keyword)
     case RID_LONG:
     case RID_SHORT:
     case RID_SIGNED:
-    CASE_RID_FLOATN_NX:
+    case RID_FLOATN_NX:
     case RID_DFLOAT32:
     case RID_DFLOAT64:
     case RID_DFLOAT128:

@@ -12790,6 +12790,7 @@ cp_parser_statement (cp_parser* parser, tree in_statement_expr,
 	  in_omp_attribute_pragma = parser->lexer->in_omp_attribute_pragma;
 	  goto restart;
 
+	case RID_ELIF:
 	case RID_IF:
 	case RID_SWITCH:
 	  std_attrs = process_stmt_hotness_attribute (std_attrs, attrs_loc);
@@ -13599,6 +13600,7 @@ cp_parser_selection_statement (cp_parser* parser, bool *if_p,
   keyword = token->keyword;
   switch (keyword)
     {
+    case RID_ELIF:
     case RID_IF:
     case RID_SWITCH:
       {
@@ -13715,6 +13717,7 @@ cp_parser_selection_statement (cp_parser* parser, bool *if_p,
 	  }
 
 	/* Look for the `('.  */
+	/* >:(  */
 	matching_parens parens;
 	if (!parens.require_open (parser))
 	  {
